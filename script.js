@@ -81,8 +81,7 @@ async function handleCloseSubmit(event){
 
 closeSearchBtn.addEventListener('click', handleCloseSubmit); 
 
-async function handleShowMeMoreClick(event){
-    movieAreaGrid.innerHTML = '';    
+async function handleShowMeMoreClick(event){  
     currentApiPage++;
     getResults(currentSearchTerm);
     searchInput.value = '';
