@@ -1,1 +1,46 @@
+body{
+    background-color: rgb(37, 32, 103);
+    color: white;
+    font-family: copperplate;
+}
 
+h1{
+    text-align: center;
+    color: rgb(153, 43, 29);
+    font-size: 70px;
+    font-family: copperplate;
+}
+
+img{
+    width:100px;
+    border-radius: 8px;
+}
+
+#movies-grid{
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    gap: 10px;
+}
+
+#search-form{
+    text-align: center;
+}
+
+.close-search{
+    text-align: center;
+}
+
+.search-btn:hover{
+    background-color: rgb(153, 43, 29);
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.load-more-btn-hidden:hover{
+    background-color: rgb(153, 43, 29);
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.close-search-btn-hidden:hover{
+    background-color: rgb(153, 43, 29);
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
