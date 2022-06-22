@@ -10,7 +10,7 @@ const loadMoreBtn = document.getElementById('load-more-btn');
 const closeSearchBtn = document.getElementById('close-search-btn');
 
 async function nowPlaying(){
-    fetch(`https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}`)
+    fetch(`https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&page=${currentApiPage}`)
     .then(response => response.json())
     .then(data => showMovies(data.results));
 
@@ -19,6 +19,7 @@ showMovies = data => {
     const moviesDiv = document.querySelector('#movies-grid');
     data.forEach(data => {        
         //getting movie title
+
         const movieTitle = document.createElement('p');
         movieTitle.innerText = `${data.original_title}`;
         //getting movie rating
@@ -83,7 +84,12 @@ closeSearchBtn.addEventListener('click', handleCloseSubmit);
 
 async function handleShowMeMoreClick(event){  
     currentApiPage++;
-    getResults(currentSearchTerm);
+    if(currentSearchTerm == ''){
+        nowPlaying();
+    }
+    else{
+        getResults(currentSearchTerm);
+    }
     searchInput.value = '';
 }
 
